@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="myPane" minHeight="720.0" minWidth="900.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project.MyPageTabController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="105.0" layoutY="617.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="44.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Label fx:id="userinfoLabel" prefHeight="42.0" prefWidth="833.0" text="xxxxx" />
+      <Circle fx:id="userProfileCircle" fill="#e6ecf2" layoutX="130.0" layoutY="162.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="postsLabel" layoutX="389.0" layoutY="145.0" prefHeight="42.0" prefWidth="66.0" text="Posts">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="followersLabel" layoutX="490.0" layoutY="145.0" prefHeight="42.0" prefWidth="82.0" text="Followers">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="followingsLabel" layoutX="616.0" layoutY="145.0" prefHeight="42.0" prefWidth="103.0" text="Followings">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="nPostsLabel" layoutX="400.0" layoutY="102.0" prefHeight="42.0" prefWidth="33.0" text="0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="nFollowersLabel" layoutX="514.0" layoutY="102.0" onMouseClicked="#showFollowersList" prefHeight="42.0" prefWidth="33.0" text="0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="nFollowingsLabel" layoutX="651.0" layoutY="102.0" onMouseClicked="#showFollowingsList" prefHeight="42.0" prefWidth="33.0" text="0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ListView fx:id="showPostsListView" layoutX="14.0" layoutY="268.0" onMouseClicked="#showUserPost" prefHeight="343.0" prefWidth="543.0" />
+      <Label fx:id="themeLabel" layoutX="709.0" layoutY="235.0" prefHeight="18.0" prefWidth="119.0" text="Theme" textAlignment="CENTER" />
+      <ListView fx:id="themeListView" layoutX="635.0" layoutY="284.0" onMouseClicked="#themeSelect" prefHeight="200.0" prefWidth="200.0" />
+      <Rectangle fx:id="showUserPostRect" arcHeight="5.0" arcWidth="5.0" height="474.0" layoutX="11.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="783.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="showUserCaptionRect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="42.0" layoutX="11.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="783.0" />
+      <Label fx:id="postCaptionLabel" layoutX="13.0" layoutY="520.0" prefHeight="42.0" prefWidth="783.0" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitFromShowPostButton" layoutX="794.0" layoutY="46.0" mnemonicParsing="false" onAction="#exitFromShowPost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #0900ff;" text="exit" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="likePostButton" layoutX="794.0" layoutY="76.0" mnemonicParsing="false" onAction="#likePost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Like" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="showLikersButton" layoutX="794.0" layoutY="110.0" mnemonicParsing="false" onAction="#showLikers" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Show Likers" visible="false" />
+      <Button fx:id="likedPostButton" layoutX="794.0" layoutY="76.0" mnemonicParsing="false" onAction="#likePost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #ff0000; -fx-border-color: #000000;" text="Liked" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="commentButton" layoutX="794.0" layoutY="137.0" mnemonicParsing="false" onAction="#showComments" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" style="-fx-background-color: #2f00ff; -fx-border-color: #000000;" text="Comment" textFill="WHITE" visible="false" />
+      <ListView fx:id="showFollowersOrFollowingsOrLikersListView" layoutX="317.0" layoutY="176.0" prefHeight="274.0" prefWidth="296.0" visible="false" />
+      <Button fx:id="exitFromFollowersOrFollowingsOrLikersList" layoutX="577.0" layoutY="176.0" mnemonicParsing="false" onAction="#exitFromFollowersOrFollowingsList" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="exit" visible="false" />
+      <ListView fx:id="showCommentsListView" layoutX="216.0" layoutY="146.0" prefHeight="314.0" prefWidth="407.0" visible="false" />
+      <TextField fx:id="commentTextField" layoutX="216.0" layoutY="460.0" prefHeight="26.0" prefWidth="364.0" promptText="Enter your comment" visible="false" />
+      <Button fx:id="sendCommentButton" layoutX="581.0" layoutY="460.0" mnemonicParsing="false" onAction="#sendComment" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="Send" visible="false" />
+      <Button fx:id="exitFromShowCommentsButton" layoutX="588.0" layoutY="147.0" mnemonicParsing="false" onAction="#exitFromShowComments" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="exit" visible="false" />
+      <Button fx:id="logoutButton" layoutX="833.0" mnemonicParsing="false" onAction="#logout" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="41.0" prefWidth="66.0" text="Logout" />
+      <Button fx:id="homeTabButton" layoutY="620.0" mnemonicParsing="false" onAction="#homeTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Home" />
+      <Button fx:id="searchTabButton" layoutX="180.0" layoutY="620.0" mnemonicParsing="false" onAction="#searchTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Search" />
+      <Button fx:id="myPageTabButton" layoutX="720.0" layoutY="620.0" mnemonicParsing="false" onAction="#myPageTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="My Page" />
+      <Button fx:id="newPostButton" layoutX="360.0" layoutY="620.0" mnemonicParsing="false" onAction="#newPostTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="New Post" />
+      <Button fx:id="chatTabButton" layoutX="540.0" layoutY="620.0" mnemonicParsing="false" onAction="#chatTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Chat" />
+   </children>
+</AnchorPane>

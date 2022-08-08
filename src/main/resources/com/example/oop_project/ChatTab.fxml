@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane fx:id="myPane" minHeight="720.0" minWidth="900.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project.ChatTabController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="105.0" layoutY="617.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="44.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Label fx:id="userinfoLabel" prefHeight="42.0" prefWidth="833.0" text="xxxxx" />
+      <Button fx:id="logoutButton" layoutX="833.0" mnemonicParsing="false" onAction="#logout" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="41.0" prefWidth="66.0" text="Logout" />
+      <Button fx:id="homeTabButton" layoutY="620.0" mnemonicParsing="false" onAction="#homeTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Home" />
+      <Button fx:id="searchTabButton" layoutX="180.0" layoutY="620.0" mnemonicParsing="false" onAction="#searchTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Search" />
+      <Button fx:id="newPostButton" layoutX="360.0" layoutY="620.0" mnemonicParsing="false" onAction="#newPostTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="New Post" />
+      <Button fx:id="chatTabButton" layoutX="540.0" layoutY="620.0" mnemonicParsing="false" onAction="#chatTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Chat" />
+      <Button fx:id="myPageTabButton" layoutX="720.0" layoutY="620.0" mnemonicParsing="false" onAction="#myPageTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="My Page" />
+      <ListView fx:id="contactsListView" layoutY="85.0" onMouseClicked="#chat" prefHeight="334.0" prefWidth="180.0" />
+      <ListView fx:id="groupListView" layoutY="425.0" onMouseClicked="#groupChat" prefHeight="153.0" prefWidth="180.0" />
+      <Button fx:id="newGroupButton" layoutY="583.0" mnemonicParsing="false" onAction="#newgroup" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="34.0" prefWidth="84.0" text="New Group" />
+      <Button fx:id="showGroupUserButton" layoutX="90.0" layoutY="583.0" mnemonicParsing="false" onAction="#showUsers" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="34.0" prefWidth="84.0" text="Show Users" />
+      <ListView fx:id="chatListView" layoutX="180.0" layoutY="85.0" onMouseClicked="#showerf" prefHeight="500.0" prefWidth="719.0" />
+      <TextField fx:id="userSearchTextField" layoutY="44.0" prefHeight="38.0" prefWidth="832.0" />
+      <Button fx:id="searchButton" layoutX="833.0" layoutY="44.0" mnemonicParsing="false" onAction="#searchContact" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="37.0" prefWidth="66.0" text="Search" />
+      <TextField fx:id="chatTextField" layoutX="180.0" layoutY="583.0" prefHeight="34.0" prefWidth="648.0" />
+      <Button fx:id="sendButton" layoutX="828.0" layoutY="583.0" mnemonicParsing="false" onAction="#sendChat" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="34.0" prefWidth="72.0" text="Send" />
+      <ListView fx:id="erfListView" layoutX="430.0" layoutY="150.0" onMouseClicked="#erf" prefHeight="71.0" prefWidth="78.0" visible="false" />
+      <TextField fx:id="erfTextField" layoutX="185.0" layoutY="263.0" prefHeight="34.0" prefWidth="491.0" visible="false" />
+      <Button fx:id="erfSendButton" layoutX="676.0" layoutY="263.0" mnemonicParsing="false" onAction="#erfSend" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="34.0" prefWidth="43.0" text="Send" visible="false" />
+      <Button fx:id="erfExitButton" layoutX="676.0" layoutY="230.0" mnemonicParsing="false" onAction="#erfExit" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="34.0" prefWidth="43.0" text="Exit" visible="false" />
+      <Rectangle fx:id="groupRect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="258.0" layoutX="331.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="319.0" />
+      <TextField fx:id="groupNameTextField" layoutX="409.0" layoutY="221.0" prefHeight="34.0" prefWidth="162.0" promptText="Enter group name" visible="false" />
+      <TextField fx:id="groupUsernameTextField" layoutX="409.0" layoutY="297.0" prefHeight="26.0" prefWidth="162.0" promptText="Enter a username" visible="false" />
+      <Button fx:id="addUserButton" layoutX="471.0" layoutY="347.0" mnemonicParsing="false" onAction="#addUser" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="Add" visible="false" />
+      <Button fx:id="doneGroupButton" layoutX="468.0" layoutY="406.0" mnemonicParsing="false" onAction="#makeGroup" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" style="-fx-background-color: #07df27;" text="Done" textFill="WHITE" visible="false" />
+      <ListView fx:id="groupUsersListView" layoutX="338.0" layoutY="186.0" prefHeight="250.0" prefWidth="219.0" visible="false" />
+      <Button fx:id="exitFromGroupUsersButton" layoutX="520.0" layoutY="186.0" mnemonicParsing="false" onAction="#exitFromGroupUsers" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="Exit" visible="false" />
+   </children>
+</AnchorPane>

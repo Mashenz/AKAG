@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="900.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project.HomeTabController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="105.0" layoutY="617.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="44.0" stroke="WHITE" strokeType="INSIDE" width="900.0" />
+      <Button fx:id="logoutButton" layoutX="833.0" mnemonicParsing="false" onAction="#logout" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="41.0" prefWidth="66.0" text="Logout" />
+      <Label fx:id="userinfoLabel" prefHeight="42.0" prefWidth="833.0" text="xxxxx" />
+      <Button fx:id="homeTabButton" layoutY="620.0" mnemonicParsing="false" onAction="#homeTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Home" />
+      <Button fx:id="searchTabButton" layoutX="180.0" layoutY="620.0" mnemonicParsing="false" onAction="#searchTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Search" />
+      <Button fx:id="newPostButton" layoutX="360.0" layoutY="620.0" mnemonicParsing="false" onAction="#newPostTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="New Post" />
+      <Button fx:id="chatTabButton" layoutX="540.0" layoutY="620.0" mnemonicParsing="false" onAction="#chatTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="Chat" />
+      <Button fx:id="myPageTabButton" layoutX="720.0" layoutY="620.0" mnemonicParsing="false" onAction="#myPageTab" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="100.0" prefWidth="178.0" text="My Page" />
+      <ListView fx:id="latestPostsListView" layoutX="36.0" layoutY="74.0" onMouseClicked="#showUserPostinHomeTab" prefHeight="515.0" prefWidth="815.0" visible="false" />
+      <Rectangle fx:id="showUserPostRect" arcHeight="5.0" arcWidth="5.0" height="474.0" layoutX="21.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="783.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle fx:id="showUserCaptionRect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="42.0" layoutX="21.0" layoutY="530.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="783.0" />
+      <Label fx:id="postCaptionLabel" layoutX="23.0" layoutY="530.0" prefHeight="42.0" prefWidth="783.0" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitFromShowPostButton" layoutX="804.0" layoutY="56.0" mnemonicParsing="false" onAction="#exitFromShowPost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #0900ff;" text="exit" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="likePostButton" layoutX="804.0" layoutY="86.0" mnemonicParsing="false" onAction="#likePost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Like" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="showLikersButton" layoutX="804.0" layoutY="120.0" mnemonicParsing="false" onAction="#showLikers" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Show Likers" visible="false" />
+      <Button fx:id="likedPostButton" layoutX="804.0" layoutY="86.0" mnemonicParsing="false" onAction="#likePost" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #ff0000; -fx-border-color: #000000;" text="Liked" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="commentButton" layoutX="804.0" layoutY="147.0" mnemonicParsing="false" onAction="#showComments" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" style="-fx-background-color: #2f00ff; -fx-border-color: #000000;" text="Comment" textFill="WHITE" visible="false" />
+      <ListView fx:id="showCommentsListView" layoutX="226.0" layoutY="156.0" prefHeight="314.0" prefWidth="407.0" visible="false" />
+      <TextField fx:id="commentTextField" layoutX="226.0" layoutY="470.0" prefHeight="26.0" prefWidth="364.0" promptText="Enter your comment" visible="false" />
+      <Button fx:id="sendCommentButton" layoutX="591.0" layoutY="470.0" mnemonicParsing="false" onAction="#sendComment" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="Send" visible="false" />
+      <Button fx:id="exitFromShowCommentsButton" layoutX="598.0" layoutY="157.0" mnemonicParsing="false" onAction="#exitFromShowComments" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="exit" visible="false" />
+      <ListView fx:id="showLikersListView" layoutX="327.0" layoutY="186.0" prefHeight="274.0" prefWidth="296.0" visible="false" />
+      <Button fx:id="exitFromLikersList" layoutX="587.0" layoutY="186.0" mnemonicParsing="false" onAction="#exitLikersList" onMouseEntered="#mouseHand" onMouseExited="#mouseDefault" text="exit" visible="false" />
+      <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="189.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+   </children>
+</AnchorPane>
